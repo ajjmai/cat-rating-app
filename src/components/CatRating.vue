@@ -1,7 +1,10 @@
 <template>
   <div>
-    <div>
-      <img :src="this.cat.url" alt="" />
+    <div v-if="loading">
+      Downloading cat photo ...
+    </div>
+    <div v-else>
+      <img class="cat-image" :src="this.cat.url" alt="" />
     </div>
   </div>
 </template>
@@ -12,7 +15,8 @@ export default {
   name: "CatRating",
   data() {
     return {
-      cat: null
+      cat: null,
+      loading: true
     };
   },
   created() {
@@ -28,10 +32,15 @@ export default {
         })
         .then(response => {
           this.cat = response.data[0];
+          this.loading = false;
         });
     }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.cat-image {
+  max-width: 40%;
+}
+</style>

@@ -1,15 +1,16 @@
 <template>
   <div>
     <div>Cat ratings</div>
-    <div>Kissa komponentti</div>
+    <div><cat-rating></cat-rating></div>
   </div>
 </template>
 
 <script>
+import CatRating from "../components/CatRating";
 export default {
-  name: "CatRatings"
+  name: "CatRatings",
+  components: { CatRating }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

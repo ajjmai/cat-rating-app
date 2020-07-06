@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>Cat ratings</div>
+    <h1>Rate this cat:</h1>
     <div><cat-rating></cat-rating></div>
   </div>
 </template>
